@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
 
+  http_basic_authenticate_with name: "n", password: "n", only: [:destroy]
+
+
   def create
     @article = Article.find(params[:article_id])
     # To create comment, use method generated from association
